@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.14)
 project(corvo_svg_charts)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE)
 
 include(FetchContent)
 include(GoogleTest)
@@ -26,6 +27,7 @@ set(TEST_SRCS
   tests/test_corvo_xml.cpp
   tests/test_corvo_svg.cpp
   tests/test_corvo_chart.cpp
+  tests/test_corvo_utils.cpp
 )
 
 enable_testing()

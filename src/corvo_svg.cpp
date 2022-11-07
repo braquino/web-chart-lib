@@ -14,7 +14,6 @@ Svg::Svg(const string& id, int width, int height) : XmlElmt("svg", id) {
 }
 
 Rect::Rect(const string& id, int x1, int y1, int x2, int y2, const string& fill_hex, int stroke_width, const string& stroke_color) : XmlElmt("rect", id) {
-  cout << "x1: " << x1 << " y1: " << y1 << " x2: " << x2 << " y2: " << y2 << endl;
   //if (x2 < x1) throw std::runtime_error("x2 cant be minor than x1");
   //if (y2 < y1) throw std::runtime_error("y2 cant be minor than y1");
   this->add_props("width", std::to_string(x2 - x1));

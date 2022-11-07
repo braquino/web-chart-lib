@@ -15,6 +15,8 @@ protected:
   shared_ptr<Svg> svg;
   vector<int> plot_rect;
   void create_bg();
+  void add_x_axis(int x_lab_1, int x_lab_2, double min_data, double max_data, int bins);
+  void add_y_axis(int y_lab_1, int y_lab_2, double min_data, double max_data, int bins);
 };
 
 class HistoChart : public BaseChart {
@@ -23,10 +25,11 @@ public:
   string draw();
   void add_data(shared_ptr<vector<double>> _data);
   void add_data(shared_ptr<vector<double>> _data, int bars);
-private:
+protected:
   shared_ptr<vector<double>> data;
   int bars;
-  void add_x_axis(int bar_width);
+  void plot_bars(double range, int max_bar, const vector<int>& bars_count);
+  vector<int> calculate_bars(double min_data, double range);
 };
 
 #endif // CORVO_CHART_HPP_
